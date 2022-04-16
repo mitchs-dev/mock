@@ -13,7 +13,7 @@ Well now, you don't need to! With 'mock' you can do this automatically.
 
 **Command:**
 
-`mock Wow! That movie was amazing!`
+`./mock Wow! That movie was amazing!`
 
 **Output:**
 > WoW! tHaT mOvIe WaS aMaZiNg!
