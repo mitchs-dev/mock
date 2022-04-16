@@ -8,11 +8,6 @@ Always wanted a command line tool to mock your friends?
 Tired of having to manually type out "WoW BoB yOuR aMaZinG!" every time?
 
 Well now, you don't need to! With 'mock' you can do this automatically.
-
-## Notes
-
-* `version` and `Version` are reserved terms (used for `mock version` command) so if you provide the term "version" for the first word, it is going to return the version of `mock`.
-
 ## How to use
 
 ### 🖥️ Windows
