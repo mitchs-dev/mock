@@ -12,7 +12,8 @@ Well now, you don't need to! With 'mock' you can do this automatically.
 ### Example Usage
 
 **Command:**
-> mock Wow! That movie was amazing!
+
+`mock Wow! That movie was amazing!`
 
 **Output:**
 > WoW! tHaT mOvIe WaS aMaZiNg!
