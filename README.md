@@ -8,6 +8,15 @@ Always wanted a command line tool to mock your friends?
 Tired of having to manually type out "WoW BoB yOuR aMaZinG!" every time?
 
 Well now, you don't need to! With 'mock' you can do this automatically.
+
+### Example Usage
+
+**Command:**
+> mock Wow! That movie was amazing!
+
+**Output:**
+> WoW! tHaT mOvIe WaS aMaZiNg!
+
 ## How to use
 
 ### 🖥️ Windows
