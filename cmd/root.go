@@ -37,7 +37,7 @@ Well now, you don't need to! With 'mock' you can do this automatically.`,
 		var newCharacter string
 		var newString string
 		var counter int
-		if len(args) <= 1 {
+		if len(args) <= 0 {
 			scanner := bufio.NewScanner(os.Stdin)
 			fmt.Println("Please provide text to mock.")
 			scanner.Scan()
