@@ -17,6 +17,7 @@ package cmd
 
 import (
 	"bufio"
+	"encoding/base64"
 	"fmt"
 	"os"
 	"strings"
@@ -37,6 +38,33 @@ Well now, you don't need to! With 'mock' you can do this automatically.`,
 		var newCharacter string
 		var newString string
 		var counter int
+		encodedStream, _ := cmd.Flags().GetString("encoded")
+		if encodedStream != "" {
+			textInput, err := base64.StdEncoding.DecodeString(encodedStream)
+			if err != nil {
+				panic(err)
+			}
+			splitString := strings.Split(string(textInput), "")
+			counter = 0
+			for i := 0; i < len(splitString); i++ {
+				currentCharacter := splitString[i]
+				if (currentCharacter < "a" || currentCharacter > "z") && (currentCharacter < "A" || currentCharacter > "Z") {
+					newCharacter = currentCharacter
+
+				} else {
+					if counter%2 == 0 {
+						newCharacter = strings.ToUpper(currentCharacter)
+
+					} else {
+						newCharacter = strings.ToLower(currentCharacter)
+					}
+					counter = counter + 1
+				}
+				newString = newString + newCharacter
+			}
+			fmt.Println(strings.TrimSpace(newString))
+			os.Exit(0)
+		}
 		if len(args) <= 0 {
 			scanner := bufio.NewScanner(os.Stdin)
 			fmt.Println("Please provide text to mock.")
@@ -82,7 +110,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	//rootCmd.PersistentFlags().StringVar("help", "h", "Shows help menu")
+	rootCmd.PersistentFlags().StringP("encoded", "e", "", "Pass in an encoded stream")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
